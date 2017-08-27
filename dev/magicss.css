@@ -1,0 +1,27 @@
+.cube, .cube-en, .cube-ar, .cube-fr, .line, .line-en, .line-ar, .line-fr {
+  flex-wrap: nowrap;
+  flex-direction: row; }
+
+.cube, .cube-en, .cube-ar, .cube-fr {
+  display: flex; }
+
+.line, .line-en, .line-ar, .line-fr {
+  display: inline-flex; }
+
+.cube-en {
+  flex-direction: column; }
+
+.cube-ar {
+  flex-direction: row-reverse; }
+
+.cube-fr {
+  flex-direction: column-reverse; }
+
+.line-en {
+  flex-direction: column; }
+
+.line-ar {
+  flex-direction: row-reverse; }
+
+.line-fr {
+  flex-direction: column-reverse; }

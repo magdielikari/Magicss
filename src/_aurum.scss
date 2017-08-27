@@ -1,0 +1,50 @@
+//χρυσός => Aurum
+
+// Maps to be used in later cycles
+$direction: (
+  en: column,
+  ar: row-reverse, 
+  fr: column-reverse
+);
+
+// Common element for grid
+%basic {
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+// Basic elements on which the other elements are constructed
+%cube {
+  @extend %basic;
+  display: flex;
+}
+
+%line {
+  @extend %basic;
+  display: inline-flex;  
+}
+
+// An instance of the basic elements
+.cube {
+  @extend %cube;
+}
+
+.line {
+  @extend %line;
+}
+
+// Construction of grid elements. First level
+@each $key in map-keys($direction) {
+  .cube-#{$key} {
+    @extend %cube;  
+    flex-direction: map-get($direction, $key);
+  }
+}
+
+@each $key in map-keys($direction) {
+  .line-#{$key} {
+    @extend %line;  
+    flex-direction: map-get($direction, $key);
+  }
+}
+
